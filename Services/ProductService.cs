@@ -1,4 +1,5 @@
-﻿using OrderSystem.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using OrderSystem.Data;
 using OrderSystem.Models;
 
 namespace OrderSystem.Services
@@ -15,5 +16,11 @@ namespace OrderSystem.Services
         {
             return _dbContext.Products.Where(p => p.CategoryId == categoryId);
         }
+
+        public IEnumerable<Product> GetProductsSorted(string sortField) =>
+            _dbContext.Products.OrderBy(p => EF.Property<object>(p, sortField)).ToList();
+
+        public IEnumerable<Product> SearchProducts(string searchTerm) =>
+            _dbContext.Products.Where(p => p.Name.Contains(searchTerm)).ToList();
     }
 }

@@ -1,6 +1,8 @@
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OrderSystem.Data;
+using OrderSystem.Models;
 
 namespace OrderSystem
 {
@@ -14,6 +16,8 @@ namespace OrderSystem
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<ProductDbContext>(options =>
                 options.UseSqlite("Data Source=products.db"));
+            
+            
 
             var app = builder.Build();
 

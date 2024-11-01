@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using OrderSystem.Models;
 
 namespace OrderSystem.Data
@@ -7,6 +8,9 @@ namespace OrderSystem.Data
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+
 
         public ProductDbContext(DbContextOptions<ProductDbContext> options) : base(options) { }
 
