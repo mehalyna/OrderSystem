@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OrderSystem.Data;
 
 namespace OrderSystem.Controllers
@@ -12,8 +13,17 @@ namespace OrderSystem.Controllers
         }
 
         public IActionResult Index()
-        { 
-            var categories = _dbContext.Categories.ToList();
+        {
+            var categories = _dbContext.Categories
+            .Include(c => c.Products) 
+            .Select(c => new
+            {
+                c.Id,
+                c.Name,
+                ProductCount = c.Products.Count 
+            })
+            .ToList();
+
             return View(categories);
         }
     }
