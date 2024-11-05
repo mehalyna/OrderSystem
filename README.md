@@ -62,7 +62,7 @@ Develop a test project to verify the functionality of the `OrderSystem` applicat
    - Test that `Details` returns the expected product when given a valid product ID.
    - Mock `IProductService` to return `null` for non-existing IDs and verify that the action returns `NotFound`.
 
-#### 3. Testing CategoryService
+#### 3. Testing CategoryController
 
 **Tasks**:
 - Test `CategoryController`.
