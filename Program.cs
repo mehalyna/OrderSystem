@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OrderSystem.Data;
 using OrderSystem.Models;
+using OrderSystem.Services;
 
 namespace OrderSystem
 {
@@ -14,6 +15,9 @@ namespace OrderSystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddScoped<IProductService, ProductService>();
+           
             builder.Services.AddDbContext<ProductDbContext>(options =>
                 options.UseSqlite("Data Source=products.db"));
             

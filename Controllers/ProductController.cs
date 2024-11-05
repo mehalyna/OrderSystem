@@ -3,20 +3,35 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OrderSystem.Data;
 using OrderSystem.Models;
+using OrderSystem.Services;
 
 namespace OrderSystem.Controllers
 {
     public class ProductController : Controller
     {
         private readonly ProductDbContext _dbContext;
-        public ProductController(ProductDbContext dbContext)
+        private readonly IProductService _productService;
+
+        public ProductController(ProductDbContext dbContext, IProductService productService)
         {
             _dbContext = dbContext;
+            _productService = productService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
-            var products = _dbContext.Products.Include(p => p.Category).ToList();
+            IEnumerable<Product> products;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                products = _productService.SearchProductsByName(searchString);
+                ViewBag.SearchString = searchString; 
+            }
+            else
+            {
+                products = _dbContext.Products.Include(p => p.Category).ToList();
+            }
+
             return View(products);
         }
 
