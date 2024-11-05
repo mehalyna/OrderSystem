@@ -10,7 +10,7 @@ Develop a test project to verify the functionality of the `OrderSystem` applicat
 #### Task Requirements
 
 1. **Setup the Test Project**
-   - Create a new test project in the solution. Name it `OrderSystem.Tests`.
+   - Create a new test project in the solution. Name it `OrderSystemTests`.
    - Configure the test project to use **NUnit** as the testing framework.
    - Add dependencies for **Moq** (for mocking) and **Entity Framework Core InMemory** (for simulating database interactions).
 
