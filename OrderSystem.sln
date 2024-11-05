@@ -5,11 +5,6 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSystem", "OrderSystem.csproj", "{3C894BC3-BE50-4B56-8922-6539D433DDAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSystem.Tests", "..\OrderSystemTestProject\OrderSystem.Tests.csproj", "{BB6EE418-189A-449C-A5A2-9DD1FD5C89BA}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3C894BC3-BE50-4B56-8922-6539D433DDAF} = {3C894BC3-BE50-4B56-8922-6539D433DDAF}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,10 +15,6 @@ Global
 		{3C894BC3-BE50-4B56-8922-6539D433DDAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C894BC3-BE50-4B56-8922-6539D433DDAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C894BC3-BE50-4B56-8922-6539D433DDAF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB6EE418-189A-449C-A5A2-9DD1FD5C89BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB6EE418-189A-449C-A5A2-9DD1FD5C89BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB6EE418-189A-449C-A5A2-9DD1FD5C89BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB6EE418-189A-449C-A5A2-9DD1FD5C89BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
